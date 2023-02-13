@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Instagram Profile Banner",
+  "version": "1.0",
+  "description": "This extension *should* allow Instagram users to add a banner to their profile and upload their own pictures as the background of the banner.",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
